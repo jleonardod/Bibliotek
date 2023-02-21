@@ -4,12 +4,20 @@ import Cookies from 'universal-cookie'
 const cookies = new Cookies()
 
 class Home extends Component {
+  cerrarSesion = () => {
+    cookies.remove('id', {path:"/"})
+    cookies.remove('username', {path:"/"})
+
+    window.location.href="./"
+  }
   render(){
-    console.log(cookies.get('id'))
-    console.log(cookies.get('username'))
     return(
       <div>
         Home
+
+        <br />
+
+        <button className='border-black-500 border-2' onClick={()=>this.cerrarSesion()}>Cerrar Sesión</button>
       </div>
     )
   }
