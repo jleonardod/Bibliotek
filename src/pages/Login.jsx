@@ -44,6 +44,12 @@ class Login extends Component {
     })
   }
 
+  componentDidMount(){
+    if(cookies.get('id')){
+      window.location.href = './Home'
+    }
+  }
+
   render(){
     return(
       <div>

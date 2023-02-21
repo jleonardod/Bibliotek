@@ -10,6 +10,13 @@ class Home extends Component {
 
     window.location.href="./"
   }
+
+  componentDidMount(){
+    if(!cookies.get('id')){
+      window.location.href = './'
+    }
+  }
+
   render(){
     return(
       <div>
