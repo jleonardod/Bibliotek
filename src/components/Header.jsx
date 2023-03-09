@@ -7,7 +7,7 @@ const Header = () => {
   const[showUser, setShowUser] = useState(false)
 
   return(
-    <header className="h-[7vh] md:h-[10vh] border-b border-primary p-2 flex justify-between align-items-center ">
+    <header className="h-[7vh] md:h-[10vh] border-b border-primary p-2 flex justify-between">
       <div className="relative w-[30%] ml-4">
         <RiSearchLine className="absolute top-1/2 -translate-y-1/2 left-2 border-r text-xl border-gray-400 pr-1"  />
         <input type="text" placeholder="Buscar" className=" bg-fourth w-full pl-9 text-xl outline-none py-3" />
