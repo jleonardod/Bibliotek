@@ -33,7 +33,7 @@ class Login extends Component {
         var respuesta=response[0]
         cookies.set('id', respuesta.id, {path: "/"})
         cookies.set('username', respuesta.username, {path: "/"})
-        window.location.href="./Home"
+        window.location.href="./Inicio"
       }else{
         alert("El usuario o contraseña no son correctos")
       }
@@ -45,7 +45,7 @@ class Login extends Component {
 
   componentDidMount(){
     if(cookies.get('id')){
-      window.location.href = './Home'
+      window.location.href = './Inicio'
     }
   }
 
