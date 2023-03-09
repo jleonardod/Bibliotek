@@ -1,7 +1,17 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 //Iconos
-import {RiBarChart2Line, RiBarcodeBoxLine, RiArrowRightSLine, RiUser3Line, RiFileListLine, RiSettings5Line, RiLogoutCircleRLine} from "react-icons/ri"
+import {RiBarChart2Line, RiBarcodeBoxLine, RiArrowRightSLine, RiUser3Line, RiFileListLine, RiSettings5Line, RiLogoutCircleRLine, RiCloseLine, RiMenu3Line} from "react-icons/ri"
+import Cookies from "universal-cookie"
+
+const cookies = new Cookies()
+
+function cerrarSesion (){
+  cookies.remove('id', {path:"/"})
+  cookies.remove('username', {path:"/"})
+
+  window.location.href="./"
+}
 
 const Sidebar = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -11,13 +21,13 @@ const Sidebar = () => {
   const [showConfiguraciones, setShowSubConfiguraciones] = useState(false)
   return(
     <>
-      <div className="xl:h-[100vh] overflow-y-scroll fixed bg-primary w-[80%] md:w-[40%] lg:w-[30%] xl:w-auto h-full top-0 xl:static p-4 flex flex-col justify-between z-50">
+      <div className={`xl:h-[100vh] overflow-y-scroll fixed bg-primary w-[80%] md:w-[40%] lg:w-[30%] xl:w-auto h-full top-0 xl:static p-4 flex flex-col justify-between z-50 ${showMenu ? "left-0" : "-left-full"}`}>
         <div>
           <h1 className="text-center text-2xl font-bold text-white mb-10">Bibliotek<span className="text-third text-4xl">.</span></h1>
           <ul>
             <li>
               <Link to="/" className="flex items-center gap-4 py-2 px-4 rounded-lg hover:bg-secondary transition-colors text-white">
-                <RiBarChart2Line className="text-third"/> Dashboard
+                <RiBarChart2Line className="text-white"/> Dashboard
               </Link>
             </li>
             <span className="border-b border-gray-400 w-full h-1 my-2 block"></span>
@@ -113,10 +123,13 @@ const Sidebar = () => {
           <span className="border-b border-gray-400 w-full h-1 my-2 block"></span>
         </div>
         <nav>
-          <Link to="/" className="flex items-center gap-4 py-2 px-4 rounded-lg hover:bg-primary bg-secondary transition-colors text-black">
-            <RiLogoutCircleRLine className="text-black" /> Cerrar Sesión
-          </Link>
+          <button onClick={() => cerrarSesion()} className="flex items-center gap-4 py-2 px-4 rounded-lg hover:bg-secondary bg-third transition-colors w-full text-white">
+            <RiLogoutCircleRLine className="text-white" /> Cerrar Sesión
+          </button>
         </nav>
+        <button onClick={() => setShowMenu(!showMenu)} className="xl:hidden fixed bottom-4 right-4 bg-primary text-black p-3 rounded-full z-50">
+          {showMenu ? <RiCloseLine /> : <RiMenu3Line />}
+        </button>
       </div>
       
     </>
