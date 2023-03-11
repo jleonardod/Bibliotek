@@ -27,7 +27,7 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className={`${!showNotification ? "hidden" : "absolute" } right-36 top-14 border-gray-500 border-solid border-b border-l border-r border-t w-96 z-20 bg-white`}>
+      <div className={`${!showNotification ? "hidden" : "absolute" } right-36 top-14 border-gray-500 border-solid border-b border-l border-r border-t md:w-96 w-50 z-20 bg-white`}>
         <h2 className="bg-primary w-full px-4 py-2 font-bold text-white text-2">Notificaciones</h2>
         <div className="ml-2">
           <ul className="py-2">
@@ -70,7 +70,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <div className={`${!showMensajes ? "hidden" : "absolute" } right-20 top-14 border-gray-500 border-solid border-b border-l border-r border-t w-96 z-10 bg-white`}>
+      <div className={`${!showMensajes ? "hidden" : "absolute" } right-20 top-14 border-gray-500 border-solid border-b border-l border-r border-t md:w-96 w-50 z-10 bg-white`}>
         <h2 className="bg-primary w-full px-4 py-2 font-bold text-white text-2">Mensajes</h2>
         <div className="ml-2">
           <ul className="py-2">
