@@ -41,7 +41,7 @@ const Sidebar = () => {
                 </span>
                 <RiArrowRightSLine className={`mt-1 ${showSubInventario && "rotate-90"}`} />
               </button>
-              <ul className={`${showSubInventario ? "h-full" : "h-0"} overflow-y-hidden transition-all`}>
+              <ul className={`${showSubInventario ? "h-fit" : "h-0"} overflow-y-hidden transition-all`}>
                 <li>
                   <Link to="/" className="py-2 px-4 border-l text-white border-gray-200 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-white before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-primary hover:text-white transition-colors">Libros</Link>
                 </li>
@@ -63,7 +63,7 @@ const Sidebar = () => {
                 </span>
                 <RiArrowRightSLine className={`mt-1 ${showSubClientes && "rotate-90"}`} />
               </button>
-              <ul className={`${showSubClientes ? "h-full" : "h-0"} overflow-y-hidden transition-all`}>
+              <ul className={`${showSubClientes ? "h-[120px]" : "h-0"} overflow-y-hidden transition-all`}>
                 <li>
                   <Link to="/" className="py-2 px-4 border-l text-white border-gray-200 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-white before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-primary hover:text-white transition-colors">Clientes</Link>
                 </li>
